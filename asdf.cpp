@@ -35,45 +35,49 @@ const ll MOD = 1e9 + 7;
 int dr[] = {1, -1, 0, 0, 1, -1, -1, 1};
 int dc[] = {0, 0, 1, -1, 1, 1, -1, -1};
 
+
 void solve()
 {
-    ll n;
-    cin >> n;
-    vll a(n);
-    vll ap(n);
-    forn(i, n)
+    ll n, q;
+    cin >> n >> q;
+    vll arr(n);
+    vll num(51, -1);
+    set<ll> first;
+    for (int i = 0; i < n; i++)
     {
-        cin >> a[i];
-    }
-    forn(i, n)
-    {
-        cin >> ap[i];
-    }
-    ll l = 0;
-    ll r = 0;
-    ll diff = 0;
-    for (ll i = 0; i < n - 1; i++)
-    {
-        if (ap[i] <= ap[i + 1])
+        cin >> arr[i];
+        if (first.find(arr[i]) == first.end())
         {
-            ll tmpL = i;
-            ll tmpR;
-            while (i < n - 1 && a[i] != ap[i + 1])
-            {
-                tmpR = i + 1;
-                i++;
-            }
-            i--;
-            if (diff < abs(tmpR - tmpL))
-            {
-                diff = abs(tmpR - tmpL);
-                l = tmpL;
-                r = tmpR;
-            }
+            num[arr[i]] = i+1;
+            first.insert(arr[i]);
         }
     }
-    cout<<l+1<<" "<<r+1<<el;
-    return;
+
+    vll ans;
+    while (q--)
+    {
+        ll temp;
+        cin >> temp;
+        if (num[temp] != -1)
+        {
+            ans.push_back(num[temp]);
+            ll curr = num[temp];
+            for (int i = 0; i < 51; i++)
+            {
+                if (num[i] < curr && num[i] != -1)
+                {
+                    num[i]++;
+                }
+            }
+            num[temp] = 1;
+        }
+    }
+
+    for (auto it : ans)
+    {
+        cout << it << " ";
+    }
+    cout << el;
 }
 
 int main()
@@ -87,7 +91,7 @@ int main()
     cout.tie(NULL);
     cout << setprecision(20) << fixed;
     int t = 1;
-    cin >> t;
+    //cin >> t;
     while (t--)
     {
         solve();
