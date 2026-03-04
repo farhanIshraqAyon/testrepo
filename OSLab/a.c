@@ -61,8 +61,8 @@ void* transfer_C_to_A(void* arg) {
     for (int i = 0; i < 40; i++) {
         // Note: In complex systems, we lock in a specific order (e.g., A then C) to avoid deadlock.
         // For this lab exercise, we lock Source then Dest.
-        pthread_mutex_lock(&lock_C);
         pthread_mutex_lock(&lock_A);
+        pthread_mutex_lock(&lock_C);
 
         // Critical Section
         if (C >= 25) {
@@ -73,8 +73,8 @@ void* transfer_C_to_A(void* arg) {
             printf("T3: Insufficient funds in C\n");
         }
 
-        pthread_mutex_unlock(&lock_A);
         pthread_mutex_unlock(&lock_C);
+        pthread_mutex_unlock(&lock_A);
     }
     return NULL;
 }
