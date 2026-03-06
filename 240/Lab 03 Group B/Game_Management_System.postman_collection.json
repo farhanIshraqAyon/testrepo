@@ -1,0 +1,503 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+    "name": "Game_Management_System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Games",
+      "item": [
+        {
+          "name": "Get All Games",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/games",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "games"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Game",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3001/api/games",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "games"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"New Game\",\n  \"genre\": \"RPG\",\n  \"rating\": 5,\n  \"multiplayer\": false\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Single Game",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/games/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "games",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "game_id_here"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Game",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "http://localhost:3001/api/games/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "games",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "game_id_here"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"rating\": 8\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Game",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3001/api/games/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "games",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "game_id_here"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Players",
+      "item": [
+        {
+          "name": "Get All Players",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/players",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "players"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Player",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3001/api/players",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "players"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Player\",\n  \"email\": \"newplayer@example.com\",\n  \"age\": 15,\n  \"membershipLevel\": \"elite\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Single Player",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/players/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "players",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "player_id_here"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Player",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "http://localhost:3001/api/players/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "players",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "player_id_here"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"active\": false\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Player",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3001/api/players/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "players",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "player_id_here"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Developers",
+      "item": [
+        {
+          "name": "Get All Developers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/developers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "developers"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Developer",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3001/api/developers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "developers"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Dev\",\n  \"email\": \"newdev@example.com\",\n  \"specializations\": [\"RPG\"],\n  \"experienceYears\": 5,\n  \"hourlyRate\": 45\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Single Developer",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/developers/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "developers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "dev_id_here"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Developer",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "http://localhost:3001/api/developers/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "developers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "dev_id_here"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"hourlyRate\": 50\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Developer",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:3001/api/developers/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "developers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "dev_id_here"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Collaborations",
+      "item": [
+        {
+          "name": "Get All Collaborations",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:3001/api/collaborations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "collaborations"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Collaboration",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:3001/api/collaborations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "collaborations"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"player\": \"player_id_here\",\n  \"developer\": \"dev_id_here\",\n  \"game\": \"game_id_here\",\n  \"description\": \"Add a new skin\",\n  \"estimatedHours\": 10\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Collaboration Status",
+          "request": {
+            "method": "PATCH",
+            "url": {
+              "raw": "http://localhost:3001/api/collaborations/:id",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3001",
+              "path": [
+                "api",
+                "collaborations",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "collab_id_here"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"accepted\",\n  \"timeline\": \"Next sprint\"\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
